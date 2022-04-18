@@ -1,7 +1,7 @@
 from django.urls import path
 
-from . import views
+from . import database
 
 urlpatterns = [
-	path('', views.index, name='index'),
+	path('', database.home, name="home"),
 ]
