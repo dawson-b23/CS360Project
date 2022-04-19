@@ -7,3 +7,6 @@ def home(request):
 def Showcus(request):
 	resultsdisplay=CustomerDetails.objects.all()
 	return render(request,"tables.html",{'CustomerDetails':resultsdisplay})
+
+def requestForm(request):
+	return render(request, 'events/requestForm.html', {})
