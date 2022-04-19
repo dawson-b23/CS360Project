@@ -1,4 +1,6 @@
+import os
 from pathlib import Path
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'events',
+    'events'
 ]
 
 MIDDLEWARE = [
@@ -43,7 +45,7 @@ ROOT_URLCONF = 'websiteCS360.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'templates / events')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -65,14 +67,14 @@ WSGI_APPLICATION = 'websiteCS360.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'database_schema',
+        'NAME': 'customers',
         'USER': 'root',
         'PASSWORD': 'password',
-        'HOST': '',
-        'PORT': '',
-        'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
-        }
+        'HOST': 'localhost',
+        'PORT': ''
+        #'OPTIONS': {
+            #'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+      # }
     }
 }
 
