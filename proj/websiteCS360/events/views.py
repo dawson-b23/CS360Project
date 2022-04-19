@@ -17,3 +17,6 @@ def gitAccess(request):
 
 def aboutUs(request):
 	return render(request, 'events/aboutUs.html', {})
+
+def ERDiagram(request):
+	return render(request, 'events/ERDiagram.html', {})
