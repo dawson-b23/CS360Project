@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render,redirect
 from events.models import CustomerDetails
 
@@ -8,5 +9,11 @@ def Showcus(request):
 	resultsdisplay=CustomerDetails.objects.all()
 	return render(request,"tables.html",{'CustomerDetails':resultsdisplay})
 
-def requestForm(request):
-	return render(request, 'events/requestForm.html', {})
+def contactUs(request):
+	return render(request, 'events/contactUs.html', {})
+
+def gitAccess(request):
+	return render(request, 'events/gitAccess.html', {})
+
+def aboutUs(request):
+	return render(request, 'events/aboutUs.html', {})

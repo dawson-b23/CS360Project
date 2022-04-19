@@ -7,5 +7,7 @@ urlpatterns = [
     #path('admin/', admin.site.urls),
     path('', views.home, name="home"),
     path('',views.Showcus),
-    path('', views.requestForm, name="requestForm")
+    path('contactUs', views.contactUs, name="contactUs"),
+    path('gitAccess', views.gitAccess, name="gitAccess"),
+    path('aboutUS', views.aboutUs, name='aboutUs'),
 ]
