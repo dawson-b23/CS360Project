@@ -1,17 +1,6 @@
 from django.db import connections
 from django.db import models
 
-'''
-# Create your models here.
-class CustomerDetails(models.Model):
-    CustomerID=models.CharField(max_length=100)
-    CustomerName=models.CharField(max_length=100)
-    Email=models.CharField(max_length=100)
-    Budget=models.CharField(max_length=100)
-    class Meta:
-        db_table="customer"
-'''
-
 ##
 ##  These are for the products and services (interaction with customer)
 ##
@@ -19,11 +8,9 @@ class CustomerDetails(models.Model):
 class Product(models.Model):
     PID = models.CharField('Product ID', max_length=20) # PK
     name = models.CharField('Product Name', max_length=120)
-    #size = 
+    size = models.CharField('Product Size', max_length=60)
     brand = models.CharField('Brand', max_length=120)
     price = models.CharField('Price', max_length=12)
-    #electronicType = #reliant on options 
-    #display = 
 
 
     def __str__(self):
@@ -86,8 +73,6 @@ class Requirement(models.Model):
     size = models.CharField('Requirement Size', max_length=120)
     brand = models.CharField('Requirement Brand', max_length=120)
     price = models.CharField('Requirement Price', max_length=120)
-    #electronicType = other options
-    #display = 
     #delivery = FK?
     CID = models.ForeignKey(Customer, on_delete=models.DO_NOTHING, blank=True, null=True)
 
