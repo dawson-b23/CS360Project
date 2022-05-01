@@ -36,7 +36,7 @@ class Customer(models.Model):
     firstName = models.CharField('First Name', max_length=120)
     lastName = models.CharField('Last Name', max_length=120)
     email = models.EmailField('Email Address')
-    street = models.CharField('Home Address', max_length=300)
+    street = models.CharField('Street', max_length=300)
     city = models.CharField('City', max_length=30)
     state = models.CharField('State', max_length=15)
     zipCode = models.CharField('Zip Code', max_length=10)
@@ -67,7 +67,7 @@ class wishList(models.Model):
     priority5 =
     CID = models.ForeignKey(Customer, blank=True, null=True)
 '''
-
+'''
 class Requirement(models.Model):
     RID = models.CharField('Requirement ID', max_length=120)
     size = models.CharField('Requirement Size', max_length=120)
@@ -79,7 +79,7 @@ class Requirement(models.Model):
 
     def __str__(self):
         return self.RID
-
+'''
 
 class Delivery(models.Model):
     DID = models.CharField('Delivery ID', max_length=30)
