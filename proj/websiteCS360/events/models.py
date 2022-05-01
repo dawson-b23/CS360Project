@@ -8,4 +8,6 @@ class CustomerDetails(models.Model):
     Email=models.CharField(max_length=100)
     Budget=models.CharField(max_length=100)
     class Meta:
-        db_table="customer"
+        db_table='customer'
+
+

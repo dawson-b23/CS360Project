@@ -19,14 +19,11 @@
       </tr>
     </thead>
     <tbody>
-	{% for resultsdisplay in CustomerDetails %}  
-      <tr>
-        <td>{{resultsdisplay.CustomerID}}</td>
-        <td>{{resultsdisplay.CustomerName}}</td>
-		<td>{{resultsdisplay.Email}}</td>
-		<td>{{resultsdisplay.Budget}}</td>
-      </tr>
-	  {% endfor %} 
+      {% for resultsdisplay in CustomerDetails %}
+
+      {{resultsdisplay.CustomerID}},{{resultsdisplay.CustomerName}},{{resultsdisplay.Email}}, {{resultsdisplay.Budget}}
+      <br>
+      {% endfor %}
 	</tbody>
 </table>	
 </div>
