@@ -1,5 +1,6 @@
-from django.core.management.base import BaseCommand
 from faker import Faker
+from django.core.management.base import BaseCommand
+
 
 PRODUCTS = [
     "Camera",
@@ -148,7 +149,7 @@ INTERNETCOST = [
 ]
 
 
-class Provider(faker.providers.BaseProviders):
+class Provider(faker.providers.BaseProvider):
     def store_products(self):
         return self.random_element(PRODUCTS)
 
