@@ -148,7 +148,14 @@ INTERNETCOST = [
 ]
 
 
+class Provider(faker.providers.BaseProviders):
+    def store_products(self):
+        return self.random_element(PRODUCTS)
 
+    def store_brands(self):
+        return self.random_element(BRANDS)
+
+    
 
 
 
@@ -160,4 +167,6 @@ class Command(BaseCommand):
     def handle(self, *args, **kwargs):
         
         fake = Faker()
+        fake.add_provider(Provider)
+        print(fake.store_products())
     
