@@ -1,0 +1,15 @@
+{% extends 'events/base.html' %}
+
+{% block content %}
+		<h1>
+			 Product List
+		</h1>
+		<ul>
+{% for product in productList %}
+
+	<li>{{ product }}</li>
+
+{% endfor %}
+		</ul>
+
+{% endblock %}

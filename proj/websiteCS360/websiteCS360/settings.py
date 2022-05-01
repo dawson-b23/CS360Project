@@ -66,15 +66,8 @@ WSGI_APPLICATION = 'websiteCS360.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'customers',
-        'USER': 'root',
-        'PASSWORD': 'password',
-        'HOST': '',
-        'PORT': '',
-        'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
-       }
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'bestBuyDatabase',
     }
 }
 
