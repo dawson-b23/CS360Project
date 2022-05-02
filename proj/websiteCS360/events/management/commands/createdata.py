@@ -10,7 +10,7 @@ fake = Faker()
 #from events import settings
 #from events.models import Product, Customer, Vendor, Delivery
 
-
+1
 
 
 

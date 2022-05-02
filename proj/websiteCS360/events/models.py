@@ -6,11 +6,11 @@ from django.db import models
 ##
 
 class Product(models.Model):
-    PID = models.CharField('Product ID', max_length=1000) # PK
-    name = models.CharField('Product Name', max_length=120)
-    size = models.CharField('Product Size', max_length=60)
-    brand = models.CharField('Brand', max_length=120)
-    price = models.CharField('Price', max_length=1000)
+    PID = models.IntegerField( ) # PK
+    name = models.TextField( max_length=120)
+    size = models.TextField( max_length=60)
+    brand = models.TextField( max_length=120)
+    price = models.TextField( max_length=1000)
 
 
     def __str__(self):
@@ -32,14 +32,14 @@ class Service(models.Model):
 ##
 
 class Customer(models.Model):
-    CID = models.CharField('CID', max_length=500)
-    firstName = models.CharField('First Name', max_length=120)
-    lastName = models.CharField('Last Name', max_length=120)
-    email = models.EmailField('Email Address')
-    street = models.CharField('Street', max_length=300)
-    city = models.CharField('City', max_length=30)
-    state = models.CharField('State', max_length=15)
-    zipCode = models.CharField('Zip Code', max_length=10)
+    CID = models.IntegerField()
+    firstName = models.TextField(max_length=120)
+    lastName = models.TextField( max_length=120)
+    email = models.TextField(max_length=300)
+    street = models.TextField( max_length=300)
+    city = models.TextField(max_length=50)
+    state = models.TextField( max_length=50)
+    zipCode = models.TextField( max_length=10)
 
 
     def __str__(self):
@@ -47,10 +47,12 @@ class Customer(models.Model):
 
 
 class Vendor(models.Model):
-    VID = models.CharField('VID', max_length=1000)
-    companyName = models.CharField('Company Name', max_length=120)
-    CID = models.ForeignKey(Customer, on_delete=models.DO_NOTHING, blank=True, null=True)
-    PID = models.ForeignKey(Product, on_delete=models.DO_NOTHING, blank=True, null=True)
+    VID = models.IntegerField()
+    companyName = models.TextField(max_length=120)
+    CID = models.IntegerField()
+    PID = models.IntegerField()
+    #CID = models.ForeignKey(Customer, on_delete=models.DO_NOTHING, blank=True, null=True)
+    #PID = models.ForeignKey(Product, on_delete=models.DO_NOTHING, blank=True, null=True)
 
 
     def __str__(self):
@@ -82,9 +84,9 @@ class Requirement(models.Model):
 '''
 
 class Delivery(models.Model):
-    DID = models.CharField('Delivery ID', max_length=30)
-    shippingCost = models.CharField('Shipping Cost', max_length=30)
-    shippingTime = models.CharField('Shipping Time', max_length=30)
+    DID = models.IntegerField()
+    shippingCost = models.TextField(max_length=30)
+    shippingTime = models.TextField(max_length=30)
 
 
     def __str__(self):
