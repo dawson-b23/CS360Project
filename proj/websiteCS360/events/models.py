@@ -14,7 +14,7 @@ class Product(models.Model):
 
 
     def __str__(self):
-        return self.PID
+        return self.name
 
 '''
 class Service(models.Model):
@@ -34,12 +34,12 @@ class Service(models.Model):
 class Customer(models.Model):
     CID = models.IntegerField()
     firstName = models.TextField(max_length=100)
-    lastName = models.TextField( max_length=100)
+    lastName = models.TextField(max_length=100)
     email = models.TextField(max_length=100)
-    street = models.TextField( max_length=100)
+    street = models.TextField(max_length=100)
     city = models.TextField(max_length=100)
-    state = models.TextField( max_length=100)
-    zipCode = models.TextField( max_length=100)
+    state = models.TextField(max_length=100)
+    zipCode = models.TextField(max_length=100)
 
 
     def __str__(self):
@@ -56,7 +56,7 @@ class Vendor(models.Model):
 
 
     def __str__(self):
-        return self.VID
+        return self.companyName
 
 
 '''
