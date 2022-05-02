@@ -6,11 +6,11 @@ from django.db import models
 ##
 
 class Product(models.Model):
-    PID = models.CharField('Product ID', max_length=20) # PK
+    PID = models.CharField('Product ID', max_length=1000) # PK
     name = models.CharField('Product Name', max_length=120)
     size = models.CharField('Product Size', max_length=60)
     brand = models.CharField('Brand', max_length=120)
-    price = models.CharField('Price', max_length=12)
+    price = models.CharField('Price', max_length=1000)
 
 
     def __str__(self):
@@ -32,7 +32,7 @@ class Service(models.Model):
 ##
 
 class Customer(models.Model):
-    CID = models.CharField('CID', max_length=30)
+    CID = models.CharField('CID', max_length=500)
     firstName = models.CharField('First Name', max_length=120)
     lastName = models.CharField('Last Name', max_length=120)
     email = models.EmailField('Email Address')
@@ -47,7 +47,7 @@ class Customer(models.Model):
 
 
 class Vendor(models.Model):
-    VID = models.CharField('VID', max_length=30)
+    VID = models.CharField('VID', max_length=1000)
     companyName = models.CharField('Company Name', max_length=120)
     CID = models.ForeignKey(Customer, on_delete=models.DO_NOTHING, blank=True, null=True)
     PID = models.ForeignKey(Product, on_delete=models.DO_NOTHING, blank=True, null=True)

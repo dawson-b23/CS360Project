@@ -1,5 +1,17 @@
-from faker import Faker
+
+'''
+import random
+
+from faker.providers import BaseProvider
 from django.core.management.base import BaseCommand
+from faker import Faker
+
+fake = Faker()
+#from events import settings
+#from events.models import Product, Customer, Vendor, Delivery
+
+
+
 
 
 PRODUCTS = [
@@ -149,7 +161,8 @@ INTERNETCOST = [
 ]
 
 
-class Provider(faker.providers.BaseProvider):
+
+class MyProvider(faker.providers.BaseProvider):
     def store_products(self):
         return self.random_element(PRODUCTS)
 
@@ -167,7 +180,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **kwargs):
         
-        fake = Faker()
-        fake.add_provider(Provider)
+        #fake = Faker(["nl_NL"])
+        fake.add_provider(MyProvider)
         print(fake.store_products())
-    
+   '''
