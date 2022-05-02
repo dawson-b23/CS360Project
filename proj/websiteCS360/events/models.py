@@ -33,13 +33,13 @@ class Service(models.Model):
 
 class Customer(models.Model):
     CID = models.IntegerField()
-    firstName = models.TextField(max_length=120)
-    lastName = models.TextField( max_length=120)
-    email = models.TextField(max_length=300)
-    street = models.TextField( max_length=300)
-    city = models.TextField(max_length=50)
-    state = models.TextField( max_length=50)
-    zipCode = models.TextField( max_length=10)
+    firstName = models.TextField(max_length=100)
+    lastName = models.TextField( max_length=100)
+    email = models.TextField(max_length=100)
+    street = models.TextField( max_length=100)
+    city = models.TextField(max_length=100)
+    state = models.TextField( max_length=100)
+    zipCode = models.TextField( max_length=100)
 
 
     def __str__(self):
@@ -48,7 +48,7 @@ class Customer(models.Model):
 
 class Vendor(models.Model):
     VID = models.IntegerField()
-    companyName = models.TextField(max_length=120)
+    companyName = models.TextField(max_length=100)
     CID = models.IntegerField()
     PID = models.IntegerField()
     #CID = models.ForeignKey(Customer, on_delete=models.DO_NOTHING, blank=True, null=True)
@@ -85,8 +85,8 @@ class Requirement(models.Model):
 
 class Delivery(models.Model):
     DID = models.IntegerField()
-    shippingCost = models.TextField(max_length=30)
-    shippingTime = models.TextField(max_length=30)
+    shippingCost = models.TextField(max_length=100)
+    shippingTime = models.TextField(max_length=100)
 
 
     def __str__(self):
