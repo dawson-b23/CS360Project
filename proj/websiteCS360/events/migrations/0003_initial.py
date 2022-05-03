@@ -25,6 +25,7 @@ class Migration(migrations.Migration):
                 ('city', models.TextField(max_length=100)),
                 ('state', models.TextField(max_length=100)),
                 ('zipCode', models.TextField(max_length=100)),
+                ('internetType', models.TextField(max_length=100)),
             ],
             
         ),
@@ -46,6 +47,9 @@ class Migration(migrations.Migration):
                 ('name', models.TextField(max_length=100)),
                 ('brand', models.TextField(max_length=100)),
                 ('price', models.TextField(max_length=100)),
+                ('internetAccess', models.TextField(max_length=100)),
+                ('shippingCost', models.TextField(max_length=100)),
+                ('shippingTime', models.TextField(max_length=100)),
             ],
             
         ),
