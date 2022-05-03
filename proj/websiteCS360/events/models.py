@@ -7,10 +7,13 @@ from django.db import models
 
 class Product(models.Model):
     PID = models.IntegerField( ) # PK
-    name = models.TextField( max_length=120)
-    size = models.TextField( max_length=60)
-    brand = models.TextField( max_length=120)
-    price = models.TextField( max_length=1000)
+    name = models.TextField( max_length=100)
+    size = models.TextField( max_length=100)
+    brand = models.TextField( max_length=100)
+    price = models.TextField( max_length=100)
+    internetAccess = models.TextField(max_length=100)
+    shippingCost = models.TextField(max_length=100)
+    shippingTime = models.TextField(max_length=100)
 
 
     def __str__(self):
@@ -40,9 +43,10 @@ class Customer(models.Model):
     city = models.TextField(max_length=100)
     state = models.TextField(max_length=100)
     zipCode = models.TextField(max_length=100)
+    internetType = models.TextField(max_length=100)
 
 
-    def __str__(self):
+    def __int__(self):
         return self.CID
 
 
@@ -89,7 +93,7 @@ class Delivery(models.Model):
     shippingTime = models.TextField(max_length=100)
 
 
-    def __str__(self):
+    def __int__(self):
         return self.DID
 
 
