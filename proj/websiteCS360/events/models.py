@@ -7,10 +7,10 @@ from django.db import models
 
 class Product(models.Model):
     PID = models.IntegerField( ) # PK
-    name = models.TextField( max_length=120)
-    size = models.TextField( max_length=60)
-    brand = models.TextField( max_length=120)
-    price = models.TextField( max_length=1000)
+    name = models.TextField(max_length=120)
+    size = models.TextField(max_length=60)
+    brand = models.TextField(max_length=120)
+    price = models.TextField(max_length=1000)
 
 
     def __str__(self):
