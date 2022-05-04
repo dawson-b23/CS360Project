@@ -14,7 +14,7 @@ def contactUs(request):
 
 
 def gitAccess(request):
-	return render(request, 'events/gitAccess.html', {})
+	return redirect('https://github.com/dawson-b23/CS360Project')
 
 
 def aboutUs(request):
