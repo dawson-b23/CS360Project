@@ -6,29 +6,52 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'gitAccess' %}">Git Access</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'ERDiagram' %}">ER Diagram</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'ProductList' %}">Product List</a>
-        </li>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'addProduct' %}">Request Form</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'contactUs' %}">Contact Us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'aboutUs' %}">About/Info </a>
-        </li>
-         <li class="nav-item">
-          <a class="nav-link" href="{% url 'login_user' %}">Login</a>
-        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Project Details
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{% url 'gitAccess' %}">Git Access</a></li>
+            <li><a class="dropdown-item" href="{% url 'ERDiagram' %}">ER Diagram</a></li>
           </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Products
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{% url 'addProduct' %}">Add Product</a></li>
+            <li><a class="dropdown-item" href="{% url 'ProductList' %}">Product List</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Information
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{% url 'contactUs' %}">Contact Us</a></li>
+            <li><a class="dropdown-item" href="{% url 'aboutUs' %}">About Us</a></li>
+          </ul>
+        </li>
+
+        {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+          </li>
+        {% else %}
+
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'register_user' %}">Register</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'login' %}">Login</a>
+          </li>
+        {% endif %}
+
       </ul>
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

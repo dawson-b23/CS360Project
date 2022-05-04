@@ -6,13 +6,11 @@ from django.db import models
 ##
 
 class Product(models.Model):
-    PID = models.IntegerField( ) # PK
-<<<<<<< HEAD
+    PID = models.IntegerField(primary_key=True) # PK
     name = models.TextField(max_length=120)
     size = models.TextField(max_length=60)
     brand = models.TextField(max_length=120)
     price = models.TextField(max_length=1000)
-=======
     name = models.TextField( max_length=100)
     size = models.TextField( max_length=100)
     brand = models.TextField( max_length=100)
@@ -20,7 +18,6 @@ class Product(models.Model):
     internetAccess = models.TextField(max_length=100)
     shippingCost = models.TextField(max_length=100)
     shippingTime = models.TextField(max_length=100)
->>>>>>> 274fcc0245f6673ece378b2a35b97c50683d3439
 
 
     def __str__(self):
@@ -42,7 +39,7 @@ class Service(models.Model):
 ##
 
 class Customer(models.Model):
-    CID = models.IntegerField()
+    CID = models.IntegerField(primary_key=True)
     firstName = models.TextField(max_length=100)
     lastName = models.TextField(max_length=100)
     email = models.TextField(max_length=100)
@@ -54,11 +51,11 @@ class Customer(models.Model):
 
 
     def __int__(self):
-        return self.CID
+        return self.firstName + '' + self.lastName
 
 
 class Vendor(models.Model):
-    VID = models.IntegerField()
+    VID = models.IntegerField(primary_key=True)
     companyName = models.TextField(max_length=100)
     CID = models.IntegerField()
     PID = models.IntegerField()
@@ -95,7 +92,7 @@ class Requirement(models.Model):
 '''
 
 class Delivery(models.Model):
-    DID = models.IntegerField()
+    DID = models.IntegerField(primary_key=True)
     shippingCost = models.TextField(max_length=100)
     shippingTime = models.TextField(max_length=100)
 
