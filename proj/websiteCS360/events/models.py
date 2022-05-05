@@ -33,7 +33,6 @@ class Service(models.Model):
 ##
 ##  These are for the 'backened' of the website (needed for website/best buy)
 ##
-
 class Customer(models.Model):
     CID = models.IntegerField(primary_key=True)
     firstName = models.TextField(max_length=100)

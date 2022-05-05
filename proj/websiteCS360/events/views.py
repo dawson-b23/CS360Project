@@ -3,6 +3,7 @@ from django.shortcuts import render,redirect
 from .models import Product, Customer
 from .forms import ProductForm, UserForm
 from django.http import HttpResponseRedirect
+from .filters import OrderFilter
 #from events.models import CustomerDetails
 
 def home(request):
@@ -27,8 +28,11 @@ def ERDiagram(request):
 	
 def ProductList(request):
 	productList = Product.objects.all()
-	return render(request, 'events/ProductList.html', 
-		{'productList': productList})
+
+	myFilter = OrderFilter(request.GET, queryset=productList)
+	productList = myFilter.qs
+
+	return render(request, 'events/ProductList.html', {'productList': productList, 'myFilter': myFilter})
 
 
 def addProduct(request):
