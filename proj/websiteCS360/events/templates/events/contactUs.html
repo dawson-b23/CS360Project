@@ -5,6 +5,16 @@
 		<h1>
 			Contacts Us Page 
 		</h1>
-		{% include 'events/contact.html' %}
+		<div class="mb-3">
+		  <label for="email" class="form-label">Email address</label>
+		  <input type="email" class="form-control" id="emailaddress" placeholder="name@example.com">
+		</div>
+		<div class="mb-3">
+		  <label for="exampleFormControlTextarea1" class="form-label">Contact Us!</label>
+		  <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="type here....." rows="3"></textarea>
+		</div>
+		<center>
+		  <button type="button" class="btn btn-primary" type="submit">Submit</button>
+		</center>
 	</center>
 {% endblock %}
