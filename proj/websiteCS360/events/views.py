@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render,redirect
-from .models import Product
-from .forms import ProductForm
+from .models import Product, Customer
+from .forms import ProductForm, UserForm
 from django.http import HttpResponseRedirect
 #from events.models import CustomerDetails
 
@@ -22,7 +22,7 @@ def aboutUs(request):
 
 
 def ERDiagram(request):
-	return render(request, 'events/ERDiagram.html', {})
+	return redirect('https://lucid.app/lucidchart/9e2c44d2-277b-4d03-a168-4751f80192dc/edit?docId=9e2c44d2-277b-4d03-a168-4751f80192dc&shared=true&invitationId=inv_2a884bc1-cffb-43a0-9be2-78b589fed611&page=0_0#')
 
 	
 def ProductList(request):
@@ -43,3 +43,31 @@ def addProduct(request):
 		if 'submitted' in request.GET:
 			submitted = True
 	return render(request, 'events/addProduct.html', {'form':form, 'submitted':submitted})
+
+
+def addUserToDatabase(request):
+	submitted = False 
+	if request.method == "POST":
+		form = UserForm(request.POST)
+		if form.is_valid():
+			form.save()
+			return HttpResponseRedirect('/addUserToDatabase?submitted=True')
+	else:
+		form = UserForm
+		if 'submitted' in request.GET:
+			submitted = True
+	return render(request, 'events/addUserToDatabase.html', {'form':form, 'submitted':submitted})
+
+
+def addVendorToDatabase(request):
+	submitted = False 
+	if request.method == "POST":
+		form = UserForm(request.POST)
+		if form.is_valid():
+			form.save()
+			return HttpResponseRedirect('/addVendorToDatabase?submitted=True')
+	else:
+		form = UserForm
+		if 'submitted' in request.GET:
+			submitted = True
+	return render(request, 'events/addVendorToDatabase.html', {'form':form, 'submitted':submitted})

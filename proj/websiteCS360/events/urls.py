@@ -13,4 +13,6 @@ urlpatterns = [
     path('ERDiagram', views.ERDiagram, name='ERDiagram'),
     path('ProductList', views.ProductList, name='ProductList'),
     path('addProduct', views.addProduct, name='addProduct'),
+    path('addUserToDatabase', views.addUserToDatabase, name='addUserToDatabase'),
+    path('addVendorToDatabase', views.addVendorToDatabase, name='addVendorToDatabase'),
 ]

@@ -62,15 +62,23 @@
           </li>
         {% else %}
 
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'register_user' %}">Register</a>
-          </li>
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Register
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <strong>You must complete both of the forms to fully register, using same information</strong>
+            <li><a class="dropdown-item" href="{% url 'register_user' %}">Register User Website</a></li>
+            <li><a class="dropdown-item" href="{% url 'addUserToDatabase' %}">Register User Database</a></li>
+            <li><a class="dropdown-item" href="{% url 'register_vendor' %}">Register Vendor Website</a></li>
+            <li><a class="dropdown-item" href="{% url 'addVendorToDatabase' %}">Register Vendor Database</a></li>
+          </ul>
+        </li>
 
           <li class="nav-item">
             <a class="nav-link" href="{% url 'login' %}">Login</a>
           </li>
         {% endif %}
-
       </ul>
     </div>
   </div>

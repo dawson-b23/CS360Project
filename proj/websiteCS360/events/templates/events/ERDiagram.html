@@ -5,9 +5,6 @@
 		<h1>
 			ER Diagram Page 
 		</h1>
-		<picture>
-		  <source srcset="..." type="image/svg+xml">
-		  <img src="events/ERDPic.jpeg" class="img-fluid img-thumbnail" alt="ERD">
-		</picture>
+		{% load staticfiles %} <img src='{% static ERDPic.jpeg %}' alt="Hi!"/>
 	</center>
 {% endblock %}

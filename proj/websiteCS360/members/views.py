@@ -43,3 +43,23 @@ def register_user(request):
 	return render(request, 'authenticate/register_user.html', {
 		'form':form,
 		})
+
+
+def register_vendor(request):
+	if request.method == "POST":
+		form = RegisterUserForm(request.POST)
+		if form.is_valid():
+			form.save()
+			username = form.cleaned_data['username']
+			password = form.cleaned_data['password1']
+			user = authenticate(username=username, password=password)
+			login(request, user)
+			messages.success(request, ('Registration is successful'))
+			return redirect('home')
+
+	else:
+		form = RegisterUserForm()
+
+	return render(request, 'authenticate/register_vendor.html', {
+		'form':form,
+		})
