@@ -85,7 +85,7 @@ class Requirement(models.Model):
     def __str__(self):
         return self.RID
 '''
-'''
+
 class Delivery(models.Model):
     DID = models.IntegerField(primary_key=True)
     shippingCost = models.TextField(max_length=100)
@@ -94,5 +94,5 @@ class Delivery(models.Model):
 
     def __int__(self):
         return self.DID
-'''
+
 

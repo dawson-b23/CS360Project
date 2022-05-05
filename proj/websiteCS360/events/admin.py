@@ -5,7 +5,7 @@ from .models import Vendor
 #from .models import Requirement
 from .models import Product
 #from .models import Service
-#from .models import Delivery
+from .models import Delivery
 
 admin.site.register(Customer)
 admin.site.register(Vendor)
@@ -13,4 +13,4 @@ admin.site.register(Vendor)
 #admin.site.register(Requirement)
 admin.site.register(Product)
 #admin.site.register(Service)
-#admin.site.register(Delivery)
+admin.site.register(Delivery)
